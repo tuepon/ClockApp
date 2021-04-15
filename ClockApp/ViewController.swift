@@ -46,5 +46,16 @@ class ViewController: UIViewController {
         // Get value into label
         self.clockLabel.text = nowString
     }
+    
+    @IBAction func tapStartButton(_ sender: Any) {
+        // copy "set timer"
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateClock), userInfo: nil, repeats: true)
+    }
+    
+    @IBAction func tapStopButton(_ sender: Any) {
+        // Stop clock
+        self.timer.invalidate()
+    }
+    
 }
 
